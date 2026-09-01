@@ -1,0 +1,8 @@
+# Local development files
+.env
+reports/
+node_modules/.cache
+
+# TypeScript source (Vercel compiles server.ts via @vercel/node)
+*.test.ts
+test/

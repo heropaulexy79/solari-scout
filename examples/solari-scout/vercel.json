@@ -3,7 +3,14 @@
   "builds": [
     {
       "src": "server.ts",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "includeFiles": [
+          "src/**",
+          "public/**"
+        ]
+      }
     }
   ],
   "routes": [
@@ -11,5 +18,11 @@
       "src": "/(.*)",
       "dest": "server.ts"
     }
-  ]
+  ],
+  "functions": {
+    "server.ts": {
+      "maxDuration": 300,
+      "memory": 1024
+    }
+  }
 }

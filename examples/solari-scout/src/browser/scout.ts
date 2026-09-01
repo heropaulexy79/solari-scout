@@ -1,4 +1,16 @@
-import { Solari } from "@solarisdk/browser";
+/**
+ * SolariBrowserScout — uses playwright-core to connect to Solari Cloud Browser sessions.
+ *
+ * Why playwright-core instead of @solarisdk/browser:
+ *   @solarisdk/browser depends on patchright-core, which reads browsers.json at module load
+ *   time. That path resolution fails in Vercel's Lambda environment (read-only FS, different
+ *   __dirname). Since Solari uses cloud browsers (WebSocket endpoints), we don't need any
+ *   local browser binary — we just need the Playwright WebSocket client.
+ *
+ *   playwright-core ships ONLY the protocol client. When used exclusively with .connect(),
+ *   it never touches any browser binary or browsers.json manifest.
+ */
+import { chromium } from "playwright-core";
 import {
   CrawledPage,
   CrawlPayload,
@@ -13,8 +25,45 @@ import { isInternalLink, normalizeUrl, sanitizeFilename } from "../utils/url.js"
 import fs from "node:fs/promises";
 import path from "node:path";
 
+const SOLARI_API_BASE = "https://api.getsolari.com";
+
+/** Create a Solari cloud browser session and return the WebSocket endpoint. */
+async function createSolariSession(apiKey: string): Promise<{ sessionId: string; wsEndpoint: string }> {
+  const res = await fetch(`${SOLARI_API_BASE}/sessions`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ recording: true }),
+  });
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`Solari POST /sessions failed: ${res.status} ${text}`);
+  }
+
+  const data = await res.json() as { sessionId: string; wsEndpoint: string };
+  if (!data.sessionId || !data.wsEndpoint) {
+    throw new Error(`Unexpected Solari session response: ${JSON.stringify(data)}`);
+  }
+
+  return { sessionId: data.sessionId, wsEndpoint: data.wsEndpoint };
+}
+
+/** Release a Solari cloud browser session. Fire-and-forget. */
+async function releaseSolariSession(apiKey: string, sessionId: string): Promise<void> {
+  try {
+    await fetch(`${SOLARI_API_BASE}/sessions/${encodeURIComponent(sessionId)}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${apiKey}` },
+    });
+  } catch {
+    // Ignore release errors — session will be GC'd by Solari's grace timer
+  }
+}
+
 export class SolariBrowserScout {
-  private solari: Solari | null = null;
   private apiKey: string;
 
   constructor(apiKey?: string) {
@@ -41,28 +90,34 @@ export class SolariBrowserScout {
     try {
       await fs.mkdir(evidenceDir, { recursive: true });
     } catch {
-      // Ignore if directory creation fails on read-only environments
+      // Ignore directory creation failures in read-only environments
     }
 
     let browser: any = null;
-    let sessionReplayUrl: string | null = null;
     let sessionId: string | null = null;
+    let sessionReplayUrl: string | null = null;
 
+    // Attempt to establish a Solari cloud browser session
     if (this.apiKey) {
       try {
-        this.solari = new Solari({ apiKey: this.apiKey });
-        // Enable session recording per instructions
-        browser = await this.solari.launch({ recording: true } as any);
-        sessionId = browser.id || null;
+        const session = await createSolariSession(this.apiKey);
+        sessionId = session.sessionId;
+
+        // playwright-core: connect to the cloud browser via WebSocket (no local binary needed)
+        browser = await chromium.connect(session.wsEndpoint, {
+          timeout: 30_000,
+        });
       } catch (err: any) {
-        errors.push(`Solari browser launch error: ${err.message}. Falling back to standard/mock mode.`);
+        errors.push(`Solari browser launch error: ${err.message}. Falling back to simulated/offline mode.`);
+        browser = null;
+        sessionId = null;
       }
     } else {
       errors.push("SOLARI_API_KEY not set. Operating in offline/simulated mode.");
     }
 
     try {
-      const page = browser ? await browser.newPage() : null;
+      const page = browser ? await (await browser.newContext()).newPage() : null;
 
       while (queue.length > 0 && pagesVisited.length < options.maxPages) {
         const item = queue.shift()!;
@@ -92,7 +147,7 @@ export class SolariBrowserScout {
             });
             statusCode = response ? response.status() : 200;
 
-            // Batch extract DOM metadata, images, links, forms, and CTAs in one single roundtrip to prevent Playwright IPC stalls
+            // Batch extract all DOM data in one roundtrip to minimize IPC overhead
             const domData = await page.evaluate((maxLinks: number) => {
               const metaDesc = document.querySelector('meta[name="description"]')?.getAttribute('content') || undefined;
               const metaViewport = document.querySelector('meta[name="viewport"]')?.getAttribute('content') || undefined;
@@ -243,19 +298,23 @@ export class SolariBrowserScout {
               });
             }
 
-            // Screenshot for first page or pages with forms
+            // Take screenshot for first page or pages with forms
             if (pagesVisited.length === 0 || pageForms.length > 0) {
-              const shotName = `${sanitizeFilename(item.url)}.png`;
-              const fullPath = path.join(evidenceDir, shotName);
-              await page.screenshot({ path: fullPath, fullPage: false });
-              screenshotPath = fullPath;
+              try {
+                const shotName = `${sanitizeFilename(item.url)}.png`;
+                const fullPath = path.join(evidenceDir, shotName);
+                await page.screenshot({ path: fullPath, fullPage: false });
+                screenshotPath = fullPath;
+              } catch {
+                // Screenshot is best-effort; don't fail the audit
+              }
             }
           } catch (err: any) {
             statusCode = 500;
             errors.push(`Failed navigating to ${item.url}: ${err.message}`);
           }
         } else if (pagesVisited.length === 0) {
-          // Mock/Offline fallback data when browser launch failed or API key invalid
+          // Offline/mock fallback when no API key or browser connection failed
           const cleanDomain = domain.replace(/^www\./, "");
           metadata = {
             title: `${cleanDomain} - Official Home Page`,
@@ -273,28 +332,10 @@ export class SolariBrowserScout {
           const link2 = `${normalizedTarget}services`;
           const link3 = `${normalizedTarget}contact`;
           pageInternalLinks.push(link1, link2, link3);
-          
-          linksTested.push({
-            url: link1,
-            sourceUrl: item.url,
-            anchorText: "About Us",
-            status: 200,
-            outcome: "PASS",
-          });
-          linksTested.push({
-            url: link2,
-            sourceUrl: item.url,
-            anchorText: "Our Services",
-            status: 200,
-            outcome: "PASS",
-          });
-          linksTested.push({
-            url: `${normalizedTarget}invalid-page`,
-            sourceUrl: item.url,
-            anchorText: "Legacy Portal",
-            status: 404,
-            outcome: "NOT_FOUND",
-          });
+
+          linksTested.push({ url: link1, sourceUrl: item.url, anchorText: "About Us", status: 200, outcome: "PASS" });
+          linksTested.push({ url: link2, sourceUrl: item.url, anchorText: "Our Services", status: 200, outcome: "PASS" });
+          linksTested.push({ url: `${normalizedTarget}invalid-page`, sourceUrl: item.url, anchorText: "Legacy Portal", status: 404, outcome: "NOT_FOUND" });
         }
 
         pagesVisited.push({
@@ -309,19 +350,18 @@ export class SolariBrowserScout {
         });
       }
 
-      if (page) await page.close();
+      if (page) {
+        try { await page.close(); } catch { /* ignore */ }
+      }
     } finally {
       if (browser) {
-        await browser.close();
+        try { await browser.close(); } catch { /* ignore */ }
       }
-      if (this.solari) {
-        // Enforce close() to prevent Node CLI process hanging
-        await this.solari.close();
+      // Release Solari session (non-blocking)
+      if (sessionId && this.apiKey) {
+        void releaseSolariSession(this.apiKey, sessionId);
+        sessionReplayUrl = `https://console.getsolari.com/sessions/${sessionId}`;
       }
-    }
-
-    if (sessionId && this.solari) {
-      sessionReplayUrl = `https://console.getsolari.com/sessions/${sessionId}`;
     }
 
     return {
