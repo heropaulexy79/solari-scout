@@ -1,14 +1,20 @@
 import express from "express";
 import path from "node:path";
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import { SolariBrowserScout } from "./src/browser/scout.js";
 import { SolariSandboxAnalyzer } from "./src/sandbox/analyzer.js";
 import { ScoutOptions, AuditReport } from "./src/types/index.js";
 import { normalizeUrl } from "./src/utils/url.js";
 
-// Load .env if present
-if (fs.existsSync(".env")) {
-  const envContent = fs.readFileSync(".env", "utf-8");
+// ESM-compatible __dirname (works locally and in Vercel Lambda)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Load .env if present (local dev only — Vercel injects env vars directly)
+const localEnv = path.join(__dirname, ".env");
+if (fs.existsSync(localEnv)) {
+  const envContent = fs.readFileSync(localEnv, "utf-8");
   for (const line of envContent.split("\n")) {
     const trimmed = line.trim();
     if (trimmed && !trimmed.startsWith("#") && trimmed.includes("=")) {
@@ -22,8 +28,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.resolve("./public")));
-app.use("/evidence", express.static(path.resolve("./reports/evidence")));
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/evidence", express.static(path.join(__dirname, "reports", "evidence")));
+
 
 const getReportsDir = () => {
   if (process.env.VERCEL) {
