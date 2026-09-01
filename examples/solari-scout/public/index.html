@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solari Scout — Autonomous Website Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-icon">✨</span>
+      <span class="logo-text">SOLARI <strong>SCOUT</strong></span>
+    </div>
+    <div class="header-right">
+      <span class="badge solari-badge">Solari Infrastructure Connected</span>
+      <button id="saved-reports-btn" class="btn-secondary">Saved Audits (<span id="reports-count">0</span>)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero-section">
+      <h1 class="hero-title">Autonomous Website Intelligence & QA Agent</h1>
+      <p class="hero-tagline">Point it at a website. Let it investigate. Get the evidence.</p>
+      
+      <form id="audit-form" class="search-box">
+        <input type="url" id="target-url" placeholder="https://example.com" required />
+        <button type="submit" id="submit-btn" class="btn-primary">
+          <span class="btn-text">Investigate Website</span>
+          <span class="spinner hidden"></span>
+        </button>
+      </form>
+
+      <div class="quick-targets">
+        <span class="quick-label">Recent Audits:</span>
+        <div id="quick-links" class="quick-pills"></div>
+      </div>
+    </section>
+
+    <!-- Progress Pipeline Modal / Overlay -->
+    <section id="progress-container" class="card progress-card hidden">
+      <div class="card-header">
+        <h3>Autonomous Audit Pipeline</h3>
+        <span id="audit-status" class="badge badge-info">Executing Solari Cloud Session...</span>
+      </div>
+      <div class="progress-steps">
+        <div class="step-item" data-step="1">
+          <span class="step-num">1</span>
+          <span class="step-label">Launching Cloud Browser</span>
+          <span class="step-icon">⏳</span>
+        </div>
+        <div class="step-item" data-step="2">
+          <span class="step-num">2</span>
+          <span class="step-label">Discovering Website</span>
+          <span class="step-icon">⏳</span>
+        </div>
+        <div class="step-item" data-step="3">
+          <span class="step-num">3</span>
+          <span class="step-label">Testing Navigation</span>
+          <span class="step-icon">⏳</span>
+        </div>
+        <div class="step-item" data-step="4">
+          <span class="step-num">4</span>
+          <span class="step-label">Collecting Evidence</span>
+          <span class="step-icon">⏳</span>
+        </div>
+        <div class="step-item" data-step="5">
+          <span class="step-num">5</span>
+          <span class="step-label">Running Sandbox Analysis</span>
+          <span class="step-icon">⏳</span>
+        </div>
+        <div class="step-item" data-step="6">
+          <span class="step-num">6</span>
+          <span class="step-label">Generating Report</span>
+          <span class="step-icon">⏳</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Dashboard -->
+    <section id="results-dashboard" class="dashboard-section hidden">
+      <!-- Summary Header -->
+      <div class="grid-2">
+        <div class="card health-card">
+          <div class="score-circle">
+            <svg viewBox="0 0 36 36" class="circular-chart">
+              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <path id="score-stroke" class="circle" stroke-dasharray="0, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              <text x="18" y="20.35" class="percentage" id="overall-score-val">0</text>
+            </svg>
+          </div>
+          <div class="health-meta">
+            <h2>Website Health Score</h2>
+            <p id="target-domain-display">example.com</p>
+            <div id="replay-container" class="replay-wrapper hidden">
+              <a id="replay-link" href="#" target="_blank" rel="noopener" class="btn-replay">
+                ▶ Watch Solari Session Replay
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card breakdown-card">
+          <h3>Score Breakdown</h3>
+          <div class="breakdown-grid">
+            <div class="b-item">
+              <span class="b-label">Navigation</span>
+              <span id="score-nav" class="b-val">0 / 30</span>
+            </div>
+            <div class="b-item">
+              <span class="b-label">Technical</span>
+              <span id="score-tech" class="b-val">0 / 25</span>
+            </div>
+            <div class="b-item">
+              <span class="b-label">Metadata</span>
+              <span id="score-meta" class="b-val">0 / 15</span>
+            </div>
+            <div class="b-item">
+              <span class="b-label">Accessibility</span>
+              <span id="score-a11y" class="b-val">0 / 15</span>
+            </div>
+            <div class="b-item">
+              <span class="b-label">Forms & Controls</span>
+              <span id="score-forms" class="b-val">0 / 15</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Stats -->
+      <div class="metrics-row">
+        <div class="metric-box">
+          <span class="m-val" id="m-pages">0</span>
+          <span class="m-label">Pages Analyzed</span>
+        </div>
+        <div class="metric-box">
+          <span class="m-val" id="m-links">0</span>
+          <span class="m-label">Links Tested</span>
+        </div>
+        <div class="metric-box">
+          <span class="m-val" id="m-broken">0</span>
+          <span class="m-label">Broken Links</span>
+        </div>
+        <div class="metric-box">
+          <span class="m-val" id="m-forms">0</span>
+          <span class="m-label">Forms Detected</span>
+        </div>
+        <div class="metric-box">
+          <span class="m-val" id="m-issues">0</span>
+          <span class="m-label">Issues Discovered</span>
+        </div>
+      </div>
+
+      <!-- Findings Filter & List -->
+      <div class="card findings-card">
+        <div class="card-header">
+          <h3>Audit Findings</h3>
+          <div class="severity-filters">
+            <button class="filter-btn active" data-sev="ALL">All (<span id="cnt-all">0</span>)</button>
+            <button class="filter-btn sev-critical" data-sev="CRITICAL">Critical (<span id="cnt-critical">0</span>)</button>
+            <button class="filter-btn sev-high" data-sev="HIGH">High (<span id="cnt-high">0</span>)</button>
+            <button class="filter-btn sev-medium" data-sev="MEDIUM">Medium (<span id="cnt-medium">0</span>)</button>
+            <button class="filter-btn sev-low" data-sev="LOW">Low (<span id="cnt-low">0</span>)</button>
+          </div>
+        </div>
+
+        <div id="findings-list" class="findings-container"></div>
+      </div>
+
+      <!-- Pages & Links Tables -->
+      <div class="grid-2">
+        <div class="card table-card">
+          <h3>Pages Visited</h3>
+          <div class="table-wrapper">
+            <table id="pages-table">
+              <thead>
+                <tr>
+                  <th>URL</th>
+                  <th>Status</th>
+                  <th>Page Title</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card table-card">
+          <h3>Link Outcome Matrix</h3>
+          <div class="table-wrapper">
+            <table id="links-table">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>Target Link</th>
+                  <th>Outcome</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Saved Reports Drawer -->
+  <aside id="reports-drawer" class="drawer hidden">
+    <div class="drawer-header">
+      <h3>Saved Audit Reports</h3>
+      <button id="close-drawer" class="btn-icon">✕</button>
+    </div>
+    <div id="reports-list" class="drawer-content"></div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

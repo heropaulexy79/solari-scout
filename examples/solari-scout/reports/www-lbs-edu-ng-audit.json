@@ -1,0 +1,87 @@
+{
+  "target": "https://www.lbs.edu.ng/",
+  "domain": "www.lbs.edu.ng",
+  "startedAt": "2026-09-01T11:10:32.378Z",
+  "completedAt": "2026-09-01T11:10:32.382Z",
+  "summary": {
+    "pagesVisited": 1,
+    "linksTested": 2,
+    "brokenLinks": 1,
+    "formsDetected": 0,
+    "issuesCount": 2,
+    "criticalCount": 0,
+    "highCount": 1,
+    "mediumCount": 1,
+    "lowCount": 0,
+    "infoCount": 0
+  },
+  "score": {
+    "overall": 89,
+    "breakdown": {
+      "navigation": 21,
+      "technical": 25,
+      "metadata": 15,
+      "accessibility": 13,
+      "forms": 15
+    },
+    "explanation": "Health score is calculated based on weighted criteria: Navigation (30%), Technical Integrity (25%), Metadata (15%), Accessibility Signals (15%), Forms (15%). Severity penalties reduce respective subscores."
+  },
+  "findings": [
+    {
+      "id": "NAV_BROKEN_https://www.lbs.edu.ng/broken-link",
+      "severity": "HIGH",
+      "category": "navigation",
+      "type": "DETERMINISTIC",
+      "title": "Broken internal link (NOT_FOUND)",
+      "description": "Link \"Broken Page\" on https://www.lbs.edu.ng/ resolved with failure status (404).",
+      "url": "https://www.lbs.edu.ng/broken-link",
+      "recommendation": "Fix or remove broken URL reference at source page https://www.lbs.edu.ng/.",
+      "evidence": {
+        "status": 404,
+        "outcome": "NOT_FOUND",
+        "sourcePage": "https://www.lbs.edu.ng/",
+        "anchorText": "Broken Page"
+      }
+    },
+    {
+      "id": "A11Y_IMG_ALT_https://www.lbs.edu.ng/",
+      "severity": "MEDIUM",
+      "category": "accessibility",
+      "type": "DETERMINISTIC",
+      "title": "Potential accessibility issue: Images missing alt attributes",
+      "description": "1 out of 3 images on https://www.lbs.edu.ng/ lack alt text.",
+      "url": "https://www.lbs.edu.ng/",
+      "recommendation": "Add descriptive alt attributes to informative images, or alt='' for decorative images.",
+      "evidence": {
+        "imagesMissingAlt": 1,
+        "totalImages": 3
+      }
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://www.lbs.edu.ng/",
+      "status": 200,
+      "title": "Sample Title for www.lbs.edu.ng"
+    }
+  ],
+  "linkResults": [
+    {
+      "url": "https://www.lbs.edu.ng/about",
+      "sourceUrl": "https://www.lbs.edu.ng/",
+      "anchorText": "About Us",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://www.lbs.edu.ng/broken-link",
+      "sourceUrl": "https://www.lbs.edu.ng/",
+      "anchorText": "Broken Page",
+      "status": 404,
+      "outcome": "NOT_FOUND"
+    }
+  ],
+  "forms": [],
+  "evidence": [],
+  "sessionReplayUrl": null
+}

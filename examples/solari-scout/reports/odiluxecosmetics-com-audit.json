@@ -1,0 +1,1514 @@
+{
+  "target": "https://odiluxecosmetics.com/",
+  "domain": "odiluxecosmetics.com",
+  "startedAt": "2026-09-01T12:29:11.939Z",
+  "completedAt": "2026-09-01T12:29:48.052Z",
+  "summary": {
+    "pagesVisited": 10,
+    "linksTested": 20,
+    "brokenLinks": 0,
+    "formsDetected": 27,
+    "issuesCount": 39,
+    "criticalCount": 0,
+    "highCount": 0,
+    "mediumCount": 31,
+    "lowCount": 8,
+    "infoCount": 0
+  },
+  "score": {
+    "overall": 45,
+    "breakdown": {
+      "navigation": 30,
+      "technical": 0,
+      "metadata": 0,
+      "accessibility": 15,
+      "forms": 0
+    },
+    "explanation": "Health score is calculated based on weighted criteria: Navigation (30%), Technical Integrity (25%), Metadata (15%), Accessibility Signals (15%), Forms (15%). Severity penalties reduce respective subscores."
+  },
+  "findings": [
+    {
+      "id": "H1_MULTIPLE_https://odiluxecosmetics.com/",
+      "severity": "LOW",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Multiple H1 headings detected",
+      "description": "Page https://odiluxecosmetics.com/ contains 3 <h1> tags.",
+      "url": "https://odiluxecosmetics.com/",
+      "recommendation": "Structure page so primary subject is enclosed in a single <h1> element.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/",
+        "h1Count": 3
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/about/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/about/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/about/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/about/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/shop/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/shop/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/shop/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/shop/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/shop/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/shop/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/shop/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/shop/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/shop/_https://odiluxecosmetics.com/shop/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/shop/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/shop/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/shop/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/shop/_https://odiluxecosmetics.com/shop/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/shop/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/shop/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/shop/",
+        "action": "https://odiluxecosmetics.com/shop/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/shop/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/shop/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/shop/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/shop/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/baby-care/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/baby-care/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/baby-care/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/baby-care/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/baby-care/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/baby-care/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/baby-care/_https://odiluxecosmetics.com/product-category/baby-care/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/baby-care/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/baby-care/_https://odiluxecosmetics.com/product-category/baby-care/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/baby-care/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+        "action": "https://odiluxecosmetics.com/product-category/baby-care/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/baby-care/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/baby-care/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/deodorants/_https://odiluxecosmetics.com/product-category/deodorants/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/deodorants/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/deodorants/_https://odiluxecosmetics.com/product-category/deodorants/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/deodorants/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+        "action": "https://odiluxecosmetics.com/product-category/deodorants/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/deodorants/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/deodorants/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/drinks/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/drinks/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/drinks/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/drinks/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/drinks/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/drinks/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/drinks/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/drinks/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/drinks/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/drinks/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/drinks/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/drinks/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/facial-care/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/facial-care/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/facial-care/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/facial-care/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/facial-care/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/facial-care/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/facial-care/_https://odiluxecosmetics.com/product-category/facial-care/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/facial-care/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/facial-care/_https://odiluxecosmetics.com/product-category/facial-care/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/facial-care/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+        "action": "https://odiluxecosmetics.com/product-category/facial-care/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/facial-care/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/facial-care/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/fragrance/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/fragrance/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/_https://odiluxecosmetics.com/product-category/fragrance/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/fragrance/_https://odiluxecosmetics.com/product-category/fragrance/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+        "action": "https://odiluxecosmetics.com/product-category/fragrance/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/body-spray/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/body-spray/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/body-spray/_https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/body-spray/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/fragrance/body-spray/_https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/body-spray/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+        "action": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/body-spray/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/body-spray/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    },
+    {
+      "id": "META_NO_DESC_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "severity": "MEDIUM",
+      "category": "metadata",
+      "type": "DETERMINISTIC",
+      "title": "Missing meta description",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/ is missing a meta description tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "recommendation": "Provide a meta description outlining page content.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/"
+      }
+    },
+    {
+      "id": "H1_MISSING_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "severity": "MEDIUM",
+      "category": "technical",
+      "type": "DETERMINISTIC",
+      "title": "Missing main heading (H1)",
+      "description": "Page https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/ contains no <h1> tag.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "recommendation": "Include exactly one top-level <h1> heading per document.",
+      "evidence": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+        "unlabeledInputs": [
+          "paged"
+        ]
+      }
+    },
+    {
+      "id": "FORM_NO_SUBMIT_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "severity": "LOW",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form missing explicit submit button",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/ does not contain an explicit submit button (<button type=\"submit\"> or <input type=\"submit\">).",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "recommendation": "Add a visible submit control to allow unambiguous keyboard and screen-reader submission.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+        "action": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/"
+      }
+    },
+    {
+      "id": "FORM_UNLABELED_https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/_https://odiluxecosmetics.com",
+      "severity": "MEDIUM",
+      "category": "forms",
+      "type": "DETERMINISTIC",
+      "title": "Form inputs missing accessible labels",
+      "description": "Form at https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/ has 1 input(s) without associated <label> elements or aria-label attributes.",
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "recommendation": "Ensure all interactive inputs have explicit label associations.",
+      "evidence": {
+        "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+        "unlabeledInputs": [
+          "post_type"
+        ]
+      }
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://odiluxecosmetics.com/",
+      "status": 200,
+      "title": "Discover the Best Cosmetics Stores in Ikeja, Lagos"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/about/",
+      "status": 200,
+      "title": "About - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/shop/",
+      "status": 200,
+      "title": "Shop - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "status": 200,
+      "title": "Baby Care - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "status": 200,
+      "title": "Deodorants - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/drinks/",
+      "status": 200,
+      "title": "Drinks - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "status": 200,
+      "title": "Facial Care - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "status": 200,
+      "title": "Fragrance - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "status": 200,
+      "title": "Body Spray - Odiluxe"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "status": 200,
+      "title": "Mens Cologne - Odiluxe"
+    }
+  ],
+  "linkResults": [
+    {
+      "url": "https://odiluxecosmetics.com/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/about/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "About",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/shop/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Shop",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Baby Care",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Deodorants",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/drinks/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Drinks",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Facial Care",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Fragrance",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Body Spray",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Mens Cologne",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/fragrance/women-perfume/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Women Perfume",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/groceries/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Groceries",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/hair-care/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Hair Care",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/hand-soap/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Hand Soap",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/household-items/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Household Items",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/human-hair-wigs/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Human Hair Wigs",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/makeup/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Makeup",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/nail-care/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Nail Care",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/oral-care/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Oral Care",
+      "status": 200,
+      "outcome": "PASS"
+    },
+    {
+      "url": "https://odiluxecosmetics.com/product-category/sanitary-pads/",
+      "sourceUrl": "https://odiluxecosmetics.com/",
+      "anchorText": "Sanitary Pads",
+      "status": 200,
+      "outcome": "PASS"
+    }
+  ],
+  "forms": [
+    {
+      "pageUrl": "https://odiluxecosmetics.com/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/about/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/about/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/shop/",
+      "action": "https://odiluxecosmetics.com/shop/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/shop/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/shop/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "action": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/baby-care/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "action": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/deodorants/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/drinks/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/drinks/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "action": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/facial-care/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "action": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "action": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "action": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "orderby",
+          "type": "text",
+          "id": "",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "paged",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": false,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-1",
+          "required": false,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    },
+    {
+      "pageUrl": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/",
+      "action": "https://odiluxecosmetics.com",
+      "method": "GET",
+      "inputs": [
+        {
+          "name": "s",
+          "type": "search",
+          "id": "woocommerce-product-search-field-3",
+          "required": true,
+          "hasLabel": true
+        },
+        {
+          "name": "post_type",
+          "type": "hidden",
+          "id": "",
+          "required": false,
+          "hasLabel": false
+        }
+      ],
+      "hasSubmitButton": true,
+      "isPotentiallyDestructive": false,
+      "status": "SAFE_TESTED"
+    }
+  ],
+  "evidence": [
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-about.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/about/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-shop.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/shop/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-baby-care.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/baby-care/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-deodorants.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/deodorants/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-drinks.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/drinks/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-facial-care.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/facial-care/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-fragrance.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-fragrance-body-spray.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/body-spray/"
+      }
+    },
+    {
+      "type": "screenshot",
+      "path": "C:\\Users\\HP\\OneDrive\\Documents\\solari\\examples\\solari-scout\\reports\\evidence\\https-odiluxecosmetics-com-product-category-fragrance-mens-cologne.png",
+      "details": {
+        "url": "https://odiluxecosmetics.com/product-category/fragrance/mens-cologne/"
+      }
+    }
+  ],
+  "sessionReplayUrl": "https://console.getsolari.com/sessions/ip-10-0-10-199:e8da429d-6cc6-4da6-bff9-54862b6cae78:cmtik9cse01e1o1013tv1y444:1788265754083.qeA12WvW7be25bpikTrl4Q"
+}

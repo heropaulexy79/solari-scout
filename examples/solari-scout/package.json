@@ -1,0 +1,25 @@
+{
+  "name": "solari-scout",
+  "version": "1.0.0",
+  "description": "Autonomous Website Intelligence & QA Agent powered by Solari Cloud Browser and Solari Sandbox",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "start": "tsx index.ts",
+    "web": "tsx server.ts",
+    "test": "tsx test/unit.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solarisdk/browser": "^0.1.1",
+    "@solarisdk/sdk": "^0.1.2",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
