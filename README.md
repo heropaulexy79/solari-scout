@@ -1,91 +1,166 @@
-# Solari Cookbook
+# Solari Scout
 
-Short, runnable examples for [Solari](https://getsolari.com) — cloud browsers,
-sandboxes, and desktops behind one API key.
+> **Autonomous Website Intelligence & QA Agent**  
+> *Point it at a website. Let it investigate. Get the evidence.*
 
-Every example in this repo is a complete program you can run in under a minute.
-They are deliberately small: one idea each, no framework, no scaffolding to read
-past. Copy one into your project and change the parts you care about.
+Solari Scout autonomously investigates websites using a **Solari Cloud Browser**, collects DOM and network evidence, executes deterministic analysis inside a **Solari Sandbox**, and generates structured audit reports (Markdown and JSON).
 
-## Examples
+---
 
-### Cloud browser
+## Architecture & Flow
 
-| Example | Language | What it shows |
-| --- | --- | --- |
-| [browser-quickstart-ts](examples/browser-quickstart-ts) | TypeScript | Launch a browser, open a page, read it |
-| [browser-quickstart-py](examples/browser-quickstart-py) | Python | Launch a browser, open a page, read it |
-| [browser-stealth-proxy-ts](examples/browser-stealth-proxy-ts) | TypeScript | Stealth mode + residential proxy egress |
-| [browser-profiles-ts](examples/browser-profiles-ts) | TypeScript | Log in once, reuse the session forever |
-| [browser-session-recording-py](examples/browser-session-recording-py) | Python | Record a session, download the replay |
+```text
+User Target URL
+      │
+      ▼
+Solari Cloud Browser (@solarisdk/browser)
+  ├── Page metadata & heading hierarchy extraction
+  ├── Internal link discovery & outcome testing (404/500/timeout)
+  ├── Form detection & side-effect safety checks
+  └── Screenshot evidence & session recording (.rrweb)
+      │
+      ▼
+Solari Sandbox (@solarisdk/sdk)
+  ├── MicroVM isolated filesystem execution
+  ├── Deterministic findings & severity calculation
+  ├── Health score weighting (0-100)
+  └── Structured audit report rendering
+      │
+      ▼
+Artifact Output: ./reports/<domain>-audit.md & .json
+```
 
-### Sandbox
+---
 
-| Example | Language | What it shows |
-| --- | --- | --- |
-| [sandbox-quickstart-ts](examples/sandbox-quickstart-ts) | TypeScript | Run a command, write and read files |
-| [sandbox-code-interpreter-py](examples/sandbox-code-interpreter-py) | Python | Stateful Python kernel for agent loops |
-| [sandbox-port-preview-ts](examples/sandbox-port-preview-ts) | TypeScript | Expose a server in the VM on a public URL |
+## Why Solari?
 
-### Desktop
+Traditional web audit scripts run locally and suffer from anti-bot blocks, IP throttling, unisolated code execution, and unverified mock browser environments. Solari solves these infrastructure challenges:
 
-| Example | Language | What it shows |
-| --- | --- | --- |
-| [desktop-computer-use-py](examples/desktop-computer-use-py) | Python | Screenshot, click, and type on a Linux GUI |
+1. **Cloud Browser (`@solarisdk/browser`)**:
+   - Zero browser installation or binary management.
+   - Built-in stealth, proxy egress, and Playwright-compatible automation.
+   - Per-session recording capturing DOM events for replay verification.
 
-## Running an example
+2. **Sandbox (`@solarisdk/sdk`)**:
+   - Sub-second Linux microVM startup from snapshot state.
+   - Isolated execution of data processing without security risks on host machine.
+   - Stateful command execution and file management.
 
-Each directory is self-contained.
+---
+
+## Features
+
+- 🔍 **Autonomous Website Crawling:** Discovers internal pages with configurable recursion limits (`MAX_PAGES`, `MAX_DEPTH`).
+- 🔗 **Link Integrity Testing:** Validates link outcomes (`PASS`, `REDIRECT`, `NOT_FOUND`, `SERVER_ERROR`, `NAVIGATION_ERROR`).
+- 🛡️ **Safety-First Form Inspection:** Detects form controls while explicitly skipping destructive submit triggers (passwords, credit cards, payment actions).
+- 🏷️ **Technical & Meta Checks:** Identifies missing `<title>`, viewport tags, H1 heading anomalies, and missing image `alt` attributes.
+- 📊 **Transparent Health Score:** Evaluates website health (0-100) across Navigation, Technical Integrity, Metadata, Accessibility Signals, and Forms.
+- 📸 **Evidence-First Reports:** Produces timestamped Markdown (`-audit.md`), structured JSON (`-audit.json`), and captured screenshots.
+
+---
+
+## Quickstart
+
+### 1. Installation
 
 ```bash
 git clone https://github.com/solari-sdk/solari-cookbook.git
-cd solari-cookbook/examples/browser-quickstart-ts
-
-npm install                          # or: pip install -r requirements.txt
-export SOLARI_API_KEY=slr_live_...   # grab one at console.getsolari.com
-npm start                            # or: python main.py
+cd solari-cookbook/examples/solari-scout
+npm install
 ```
 
-One `slr_live_` key works across browsers, sandboxes, and desktops, and every
-product bills to the same balance.
+### 2. Configure Environment
 
-## Which product do I want?
+Copy `.env.example` to `.env` and set your API key:
 
-- **Cloud browser** — you need a *web page*: scraping, testing, filling forms,
-  anything Playwright or Puppeteer would do locally. Adds stealth, managed
-  proxies, captcha solving, profiles, and session recording.
-- **Sandbox** — you need to *run code*: an LLM's Python, an untrusted build, a
-  data job. A headless microVM that boots from a snapshot in about a second.
-- **Desktop** — you need a *screen*: computer-use agents, GUI apps, anything
-  that has to be clicked. A sandbox plus X11 and a live VNC stream.
+```bash
+export SOLARI_API_KEY=slr_live_your_api_key_here
+```
 
-## Gotchas the examples encode
+### 3. Run Solari Scout
 
-Things that cost you an afternoon if you meet them cold:
+```bash
+npm start -- https://example.com
+```
 
-- **TypeScript: call `await solari.close()`.** The browser client keeps a
-  loopback proxy open for connection retries. Skip the close and your script
-  prints its output and then hangs forever instead of exiting.
-- **Recording is per session, not per account.** Pass `recording: true` when you
-  create the session; without it the replay endpoint 404s forever. The upload is
-  async after release, so poll for ~30s before giving up.
-- **Sandbox commands are not shell-interpreted.** `run("ls -la")` looks for a
-  binary named `ls -la`. Put argv in `args`, or run `sh -c` explicitly.
-- **`kill()`, not `close()`, ends a VM.** `close()` drops your local control
-  channel; the VM keeps running until its idle timeout.
-- **`timeoutMs` is a rolling idle window**, not a hard deadline — it resets on
-  every use.
+---
 
-## Links
+## Example CLI Output
 
-- Docs — [docs.getsolari.com](https://docs.getsolari.com)
-- Console — [console.getsolari.com](https://console.getsolari.com)
-- Changelog — [changelog.getsolari.com](https://changelog.getsolari.com)
-- Questions — [hello@getsolari.com](mailto:hello@getsolari.com)
+```text
+╭────────────────────────────────────────╮
+│             SOLARI SCOUT               │
+│     Autonomous Website Intelligence    │
+╰────────────────────────────────────────╯
 
-## Contributing
+Target: https://example.com
 
-New examples are welcome. Keep them small, make them run end-to-end against the
-real API, and put anything surprising in a comment right where it bites.
+[1/6] Launching cloud browser .......... ✓
+[2/6] Discovering website .............. ✓
+[3/6] Testing navigation ............... ✓
+[4/6] Collecting evidence .............. ✓
+[5/6] Running sandbox analysis .......... ✓
+[6/6] Generating report ................ ✓
 
-MIT licensed.
+AUDIT COMPLETE
+
+Pages visited:       10
+Links tested:        25
+Broken links:        1
+Forms detected:      1
+Issues discovered:   4
+
+Critical:             0
+High:                 1
+Medium:               2
+Low:                  1
+
+Website Health:      85/100
+
+Report:
+./reports/example-com-audit.md
+```
+
+---
+
+## Health Scoring Model
+
+| Dimension | Weight | Criteria Evaluated |
+| :--- | :---: | :--- |
+| **Navigation Integrity** | 30% | Broken internal links (404/500), dead-end pages, navigation errors. |
+| **Technical Integrity** | 25% | Viewport meta tags, heading structure, document layout integrity. |
+| **Metadata Compliance** | 15% | Page titles, title lengths (10-70 chars), meta descriptions. |
+| **Accessibility Signals**| 15% | Missing image alt attributes, unlabeled interactive elements. |
+| **Forms & Controls** | 15% | Missing submit controls, form field labels, unsafe submission risks. |
+
+---
+
+## Safety & Security Safeguards
+
+Solari Scout enforces strict execution safety:
+- **No Destructive Submissions:** Forms containing sensitive words (`password`, `card`, `pay`, `delete`) are logged with status `SKIPPED_DESTRUCTIVE` and skipped.
+- **Domain Locking:** Crawling is strictly restricted to the target domain to prevent unauthorized external crawling.
+- **Resource Limits:** Default timeout of 60 seconds and maximum page limits prevent runaway execution.
+- **Process Teardown:** Explicit calls to `solari.close()` and `sandbox.kill()` clean up cloud browser slots and VM instances immediately.
+
+---
+
+## Testing
+
+Run the included unit test suite:
+
+```bash
+npm test
+```
+
+Typecheck TypeScript source:
+
+```bash
+npm run typecheck
+```
+
+---
+
+## License
+
+MIT

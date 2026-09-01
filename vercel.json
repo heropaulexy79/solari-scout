@@ -2,29 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "examples/solari-scout/server.ts",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "includeFiles": [
-          "examples/solari-scout/src/**",
-          "examples/solari-scout/public/**",
-          "examples/solari-scout/package.json",
-          "examples/solari-scout/tsconfig.json"
-        ]
-      }
+      "src": "server.ts",
+      "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "examples/solari-scout/server.ts"
+      "dest": "server.ts"
     }
-  ],
-  "functions": {
-    "examples/solari-scout/server.ts": {
-      "maxDuration": 300,
-      "memory": 1024
-    }
-  }
+  ]
 }
