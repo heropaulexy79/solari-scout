@@ -1,0 +1,9 @@
+{
+  "name": "solari-cookbook",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-scout": "cd examples/solari-scout && npm install",
+    "build": "echo 'See examples/ for individual project builds'"
+  }
+}

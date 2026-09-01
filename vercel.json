@@ -8,7 +8,9 @@
         "maxLambdaSize": "50mb",
         "includeFiles": [
           "examples/solari-scout/src/**",
-          "examples/solari-scout/public/**"
+          "examples/solari-scout/public/**",
+          "examples/solari-scout/package.json",
+          "examples/solari-scout/tsconfig.json"
         ]
       }
     }
